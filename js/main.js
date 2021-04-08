@@ -20,15 +20,17 @@ const randomIntegerFromInterval = (min, max) => {
 let interval = null;
 
 const onStart = () => {
+  ref.start.style.display = "none"
     interval = setInterval(() => {
         ref.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)]
-  
+        
     }, 1000);
     ref.start.removeEventListener('click', onStart)
 };
 const onStop = () => {
     clearInterval(interval)
-    ref.start.addEventListener('click', onStart);
+  ref.start.addEventListener('click', onStart);
+  ref.start.style.display = "inline-block"
 };
 
 
